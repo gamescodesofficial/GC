@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GamesCodes</title>
+
+<style>
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+    font-family: Arial, sans-serif;
+    color:white;
+
+    /* Two-color animated background */
+    background: linear-gradient(135deg, #2b0066, #d10072);
+    background-size: 200% 200%;
+    animation: bgMove 8s ease-in-out infinite alternate;
+}
+
+@keyframes bgMove{
+    0%{background-position:left bottom;}
+    100%{background-position:right top;}
+}
+
+h1{
+    font-size:48px;
+    text-shadow:0 0 25px rgba(255,255,255,0.9);
+    margin-bottom:20px;
+}
+
+p{
+    font-size:22px;
+    opacity:0.85;
+    margin-bottom:60px;
+}
+
+/* Button */
+button{
+    position:relative;
+    overflow:hidden;
+    padding:20px 80px;
+    font-size:28px;
+    border:none;
+    border-radius:15px;
+    cursor:pointer;
+    color:white;
+    background: linear-gradient(#66ff66,#2ecc71);
+    box-shadow:0 8px 0 #1e8449;
+    transition:0.2s;
+}
+
+/* Press effect */
+button:active{
+    box-shadow:0 4px 0 #1e8449;
+    transform:translateY(4px);
+}
+
+/* Auto shine effect */
+button::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-75%;
+    width:50%;
+    height:100%;
+    background:linear-gradient(
+        120deg,
+        rgba(255,255,255,0) 0%,
+        rgba(255,255,255,0.7) 50%,
+        rgba(255,255,255,0) 100%
+    );
+    transform:skewX(-25deg);
+    animation: shine 2.5s infinite;
+}
+
+@keyframes shine{
+    0%{ left:-75%; }
+    100%{ left:125%; }
+}
+</style>
+</head>
+
+<body>
+
+<h1>Welcome to GamesCodes</h1>
+<p>Here you can get<br>any reward code you want</p>
+
+<button onclick="goPage()">Start</button>
+
+<script>
+function goPage(){
+    window.location.href = "page2.html";
+}
+</script>
+
+</body>
+  </html>
